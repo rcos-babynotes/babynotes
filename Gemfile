@@ -13,6 +13,9 @@ end
 # User authentication
 gem 'devise'
 
+# Styling
+gem 'bootstrap-sass'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -25,10 +28,12 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+# Development, Testing
 group :development, :test do
   gem 'sqlite3'
 end
 
+# Development
 group :development do
   gem 'annotate'
 end

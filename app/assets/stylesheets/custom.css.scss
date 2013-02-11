@@ -1,0 +1,38 @@
+@import "bootstrap";
+@import "bootstrap-responsive";
+
+// Footer =====================================================================
+$lightGray: #ececec;
+$mediumGray: #a4a4a4;
+$offWhite: #f9f9f9;
+$offBlack: #292929;
+
+$mediumMargin: 10px;
+$largeMargin: $mediumMargin * 2.5;
+
+$headerFont: 'Crete Round';
+
+// Footer =====================================================================
+footer
+{
+    margin-top: 10px;
+    padding-top: 5px;
+    border-top: 1px solid $lightGray;
+    color: $mediumGray;
+    text-align: center;
+}
+
+.debug
+{
+    margin-top: 25px;
+}
+
+.footer-link
+{
+    color: $mediumGray;
+
+    &:hover
+    {
+        color: $mediumGray;
+    }
+}

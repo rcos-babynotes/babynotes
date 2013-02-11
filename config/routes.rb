@@ -2,6 +2,9 @@ Babynotes::Application.routes.draw do
   devise_for :users
 
   root to: "pages#index"
+  match '/faq', to: "pages#faq"
+  match '/team', to: "pages#team"
+  match '/privacy_policy', to: "pages#privacy_policy"
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
