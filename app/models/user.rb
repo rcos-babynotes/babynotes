@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
 
   # Validations
   # ========================================================
-
+  validates_presence_of :email, :password
 
   # Callbacks
   # ========================================================
@@ -36,7 +36,7 @@ class User < ActiveRecord::Base
 
   # Relationships
   # ========================================================
-
+  # has_many :babies
 
   # Scopes
   # ========================================================
@@ -49,5 +49,5 @@ class User < ActiveRecord::Base
   # Instance methods
   # ========================================================
 
-  
+
 end
