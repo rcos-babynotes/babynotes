@@ -1,20 +1,30 @@
-<div class="row">
-  <div class="span12">
-    <div class="well">
-      Welcome to BabyNotes!
+<% if user_signed_in? %>
+  <div class="row">
+    <div class="span12">
+      <div class="well">
+        <h1>Placeholder</h1>
+      </div>
     </div>
   </div>
-</div>
-<div class="row">
-  <div class="span8">
-    <div class="well">
-      The premier baby tracking web-app.
+<% else %>
+  <div class="row">
+    <div class="span12">
+      <div class="well">
+        Welcome to BabyNotes!
+      </div>
     </div>
   </div>
-  <div class="span4">
-    <div class="well">
-      <%= link_to "Login", new_user_session_path, class: "btn btn-primary btn-block" %>
-      <%= link_to "Register", new_user_registration_path, class: "btn btn-primary btn-block" %>
+  <div class="row">
+    <div class="span8">
+      <div class="well">
+        The premier baby tracking web-app.
+      </div>
+    </div>
+    <div class="span4">
+      <div class="well">
+        <%= link_to "Login", new_user_session_path, class: "btn btn-primary btn-block" %>
+        <%= link_to "Register", new_user_registration_path, class: "btn btn-primary btn-block" %>
+      </div>
     </div>
   </div>
-</div>
+<% end %>
