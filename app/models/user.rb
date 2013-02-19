@@ -18,6 +18,7 @@
 #
 
 class User < ActiveRecord::Base
+  
   # Devise modules
   # ========================================================
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
@@ -36,7 +37,7 @@ class User < ActiveRecord::Base
 
   # Relationships
   # ========================================================
-  # has_many :babies
+  has_many :babies
 
   # Scopes
   # ========================================================
