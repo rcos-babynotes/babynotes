@@ -2,7 +2,12 @@
   <div class="row">
     <div class="span12">
       <div class="well">
-        <h1>Placeholder</h1>
+        <% if current_user.babies.empty? %>
+          <h1>You need to make some babies</h1>
+          <%= link_to "Make Baby", new_baby_path, class: "btn btn-primary btn-block" %>
+        <% else %>
+          <h1>Placeholder</h1>
+        <% end %>
       </div>
     </div>
   </div>
