@@ -18,7 +18,8 @@ class Measurement < ActiveRecord::Base
 
   # Validations
   # ========================================================
-  validates_presence_of :height, :weight
+  validates_presence_of :baby_id
+  validate :height_or_weight
 
   # Callbacks
   # ========================================================
@@ -39,5 +40,11 @@ class Measurement < ActiveRecord::Base
   # Instance methods
   # ========================================================
 
-
+private
+  def height_or_weight
+    if height.blank? && weight.blank?
+      errors.add(:height, "A height or a weight is required")
+      return false
+    end
+  end
 end

@@ -18,7 +18,7 @@ class Baby < ActiveRecord::Base
 
   # Validations
   # ========================================================
-  validates_presence_of :birth, :name
+  validates_presence_of :birth, :name, :user_id
 
   # Callbacks
   # ========================================================

@@ -19,7 +19,7 @@ class Event < ActiveRecord::Base
 
   # Validations
   # ========================================================
-  validates_presence_of :description, :happened_at, :type
+  validates_presence_of :happened_at, :type, :baby_id
 
   # Callbacks
   # ========================================================
