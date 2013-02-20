@@ -16,7 +16,7 @@ class BabiesController < ApplicationController
     @baby = Baby.new(params[:baby])
     if @baby.save
       flash[:success] = "Baby added!"
-      redirect_to babies_path
+      redirect_to user_babies_path(current_user)
     else
       render 'new'
     end
