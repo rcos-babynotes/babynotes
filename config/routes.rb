@@ -7,7 +7,9 @@ Babynotes::Application.routes.draw do
   match '/privacy_policy', to: "pages#privacy_policy"
 
   resources :users, only: [:show]
-  resources :babies
+  resources :babies do
+    resources :measurements
+  end
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
