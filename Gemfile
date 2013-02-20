@@ -15,6 +15,8 @@ gem 'devise'
 
 # Styling
 gem 'bootstrap-sass'
+gem 'bootstrap-datepicker-rails'
+gem 'bootstrap-timepicker-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -5,3 +5,16 @@
     </div>
   </div>
 </div>
+<div class="row">
+  <div class="span12">
+    <%= form_for [current_user, @baby], html: { class: 'form-horizontal' } do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <%= f.label :name %>
+      <%= f.text_field :name, placeholder: "What is your baby's name?" %>
+      <%= f.label :birth, "Birth Date" %>
+      <%= f.text_field :birth, class: "datepicker", placeholder: "mm/dd/yyyy" %>
+      <%= f.text_field :birth, class: "timepicker", placeholder: "hh:mm", :ignore_date => true %>
+      <%= f.submit "Add Baby", class: "btn btn-primary btn-block" %>
+    <% end %>
+  </div>
+</div>

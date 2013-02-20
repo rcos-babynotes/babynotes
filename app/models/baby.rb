@@ -11,14 +11,15 @@
 #
 
 class Baby < ActiveRecord::Base
-  
+
   # Accessible attributes
   # ========================================================
   attr_accessible :birth, :name
 
   # Validations
   # ========================================================
-  validates_presence_of :birth, :name
+  validates :birth, presence: true
+  validates :name, presence: true
 
   # Callbacks
   # ========================================================
