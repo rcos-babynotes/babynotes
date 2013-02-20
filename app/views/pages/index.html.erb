@@ -4,7 +4,7 @@
       <div class="well">
         <% if current_user.babies.empty? %>
           <h1>You need to make some babies</h1>
-          <%= link_to "Make Baby", new_user_baby_path(current_user), class: "btn btn-primary btn-block" %>
+          <%= link_to "Make Baby", new_baby_path, class: "btn btn-primary btn-block" %>
         <% else %>
           <h1>Placeholder</h1>
         <% end %>
