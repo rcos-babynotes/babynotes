@@ -70,6 +70,6 @@ private
   end
 
   def clear_dates
-    due_at_date = due_at_time = nil
+    birth_date = birth_time = nil
   end
 end
