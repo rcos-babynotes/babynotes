@@ -14,8 +14,7 @@
           <%= f.label :name %>
           <%= f.text_field :name, placeholder: "What is your baby's name?" %>
           <%= f.label :birth, "Birth Date" %>
-          <%= f.text_field :birth_date, class: "datepicker", placeholder: "mm/dd/yyyy" %>
-          <%= f.text_field :birth_time, class: "timepicker", placeholder: "hh:mm" %>
+          <%= f.datetime_select :birth %>
         </div>
         <div class="form-actions">
           <%= f.submit "Add Baby", class: "btn btn-primary btn-block" %>
