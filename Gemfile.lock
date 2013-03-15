@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/tispratik/bootstrap-timepicker-rails.git
+  revision: cd4bad90934af84f5f868c891938b6f9bac1efc9
+  specs:
+    bootstrap-timepicker-rails (0.1.2)
+      railties (>= 3.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -32,6 +39,8 @@ GEM
       rake
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
+    bootstrap-datepicker-rails (0.6.42)
+      railties (>= 3.0)
     bootstrap-sass (2.2.2.0)
       sass (~> 3.2)
     builder (3.0.4)
@@ -119,7 +128,9 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
+  bootstrap-datepicker-rails
   bootstrap-sass
+  bootstrap-timepicker-rails!
   coffee-rails (~> 3.2.1)
   devise
   jquery-rails
