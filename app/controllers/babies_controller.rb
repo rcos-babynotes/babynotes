@@ -1,5 +1,5 @@
 class BabiesController < ApplicationController
-  before_filter :user_owns_baby, only: [:show]
+  before_filter :user_owns_baby, only: [:show, :edit, :update]
 
   def index
     @babies = current_user.babies
@@ -22,12 +22,15 @@ class BabiesController < ApplicationController
     end
   end
 
-private
-  def user_owns_baby
-    @baby = current_user.babies.find(params[:id])
+  def edit
+  end
 
-    if @baby.nil?
-      redirect_to root_path
+  def update
+    if @baby.update_attributes(params[:baby])
+      flash[:success] = "Baby updated!"
+      redirect_to baby_path(@baby)
+    else
+      render "edit"
     end
   end
 end

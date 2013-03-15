@@ -1,7 +1,7 @@
 class MeasurementsController < ApplicationController
   before_filter :authenticate_user!
   before_filter :user_owns_baby
-  before_filter :baby_owns_measurement
+  before_filter :baby_owns_measurement, only: [:show, :edit, :update, :delete]
 
   def index
   end
