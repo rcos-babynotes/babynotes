@@ -3,11 +3,19 @@ class ApplicationController < ActionController::Base
 
   def user_owns_baby
     @baby = current_user.babies.find_by_id(params[:baby_id] || params[:id])
-    redirect_to root_path unless @baby.present?
+    
+    unless @baby.present?
+      flash[:error] = "That's not your baby!"
+      redirect_to root_path
+    end
   end
 
   def baby_owns_measurement
     @measurement = @baby.measurements.find_by_id(params[:measurement_id] || params[:id])
-    redirect_to root_path unless @measurement.present?
+
+    unless @measurement.present?
+      flash[:error] = "That's not your baby's measurement!"
+      redirect_to root_path
+    end
   end
 end

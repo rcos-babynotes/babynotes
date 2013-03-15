@@ -1,6 +1,6 @@
 <tr>
   <td>
-    <%= link_to l(measurement.created_at), edit_baby_measurement_path(measurement) %>
+    <%= link_to l(measurement.created_at), edit_baby_measurement_path(@baby, measurement) %>
   </td>
   <td>
     <%= measurement.height %>
