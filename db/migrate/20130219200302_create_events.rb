@@ -8,5 +8,6 @@ class CreateEvents < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_index :events, [:baby, :created_at]
   end
 end

@@ -24,3 +24,19 @@
     <%= render @baby.measurements %>
   <% end %>
 </table>
+
+
+<div class="row">
+  <div class="span8">
+    <h3>Timeline</h3>
+  </div>
+  <div class="span4">
+   <%= link_to "New Event", new_baby_event_path(@baby), class: "btn pull-right" %>
+  </div>
+   <% if @baby.events.any? %>
+    <ol class="events">
+      <%= render @baby.events %>
+    </ol>
+    <% will_paginate @events %>
+  <% end %>
+</div>

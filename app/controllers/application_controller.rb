@@ -10,4 +10,9 @@ class ApplicationController < ActionController::Base
     @measurement = @baby.measurements.find_by_id(params[:measurement_id] || params[:id])
     redirect_to root_path unless @measurement.present?
   end
+
+  def baby_owns_event
+  	@event = @baby.events.find_by_id(params[:event_id] || params[:id])
+  	redirect_to root_path unless @event.present?
+  end
 end

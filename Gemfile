@@ -38,6 +38,7 @@ end
 # Development
 group :development do
   gem 'annotate'
+  gem 'faker'
 end
 
 gem 'jquery-rails'
