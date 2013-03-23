@@ -18,4 +18,9 @@ class ApplicationController < ActionController::Base
       redirect_to root_path
     end
   end
+
+  def baby_owns_event
+  	@event = @baby.events.find_by_id(params[:event_id] || params[:id])
+  	redirect_to root_path unless @event.present?
+  end
 end

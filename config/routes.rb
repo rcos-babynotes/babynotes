@@ -1,4 +1,7 @@
 Babynotes::Application.routes.draw do
+  resources :events
+
+
   devise_for :users
 
   root to: "pages#index"
@@ -9,8 +12,8 @@ Babynotes::Application.routes.draw do
   resources :users, only: [:show]
   resources :babies do
     resources :measurements
+    resources :events
   end
-  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

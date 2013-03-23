@@ -19,7 +19,8 @@ class Event < ActiveRecord::Base
 
   # Validations
   # ========================================================
-  validates_presence_of :description, :happened_at, :type
+  validates_presence_of :description, :happened_at, :type, :baby_id
+  validates :content, presence: true #maybe add a max value?
 
   # Callbacks
   # ========================================================
@@ -31,7 +32,7 @@ class Event < ActiveRecord::Base
 
   # Scopes
   # ========================================================
-
+  default_scope order: 'events.happened_at'
 
   # Static functions
   # ========================================================
