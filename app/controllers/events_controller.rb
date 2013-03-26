@@ -3,12 +3,16 @@ class EventsController < ApplicationController
   before_filter :user_owns_baby
   before_filter :baby_owns_event
 
+  def index
+  end
+
   def new
     @event = @baby.events.new
   end
 
   def create
-    @event = current_user.events.build(params[:event])
+    @event = @baby.events.new(params[:event])
+
     if @event.save
       flash[:success] = "Timeline event logged!"
       redirect_to baby_path(@baby)
@@ -17,7 +21,19 @@ class EventsController < ApplicationController
     end
   end
 
-  def destroy
+  def edit
+  end
+
+  def update
+     if @event.update_attributes(params[:event])
+      flash[:success] = "Event updated!"
+      redirect_to baby_path(@baby)
+    else
+      render "edit"
+    end
+  end
+
+  def delete
   end
       
 end
