@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
 	before_filter :authenticate_user!
   before_filter :user_owns_baby
-  before_filter :baby_owns_event, only: [:show, :edit, :update, :delete]
+  before_filter :baby_owns_event, only: [:show, :edit, :update, :destroy]
 
   def index
   end
@@ -33,7 +33,9 @@ class EventsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
+    @event.destroy
+    redirect_to baby_path(@baby)
   end
       
 end
