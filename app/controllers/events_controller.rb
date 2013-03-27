@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
 	before_filter :authenticate_user!
   before_filter :user_owns_baby
-  before_filter :baby_owns_event
+  before_filter :baby_owns_event, only: [:show, :edit, :update, :delete]
 
   def index
   end
