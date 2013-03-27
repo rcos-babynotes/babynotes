@@ -1,7 +1,9 @@
 <li>
 	<span class="content">
-		<%= link_to event.description, edit_baby_event_path(@baby, event)  %>
+		<%= link_to event.title, edit_baby_event_path(@baby, event)  %>
+		<%= event.description %>
 	</span>
+
 	<span class="timestamp">
 		Happened at <%= event.happened_at %>, <%= time_ago_in_words(event.happened_at) %> ago.
 	</span>
