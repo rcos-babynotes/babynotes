@@ -1,0 +1,10 @@
+<% provide(:title, "Edit Measurement") %>
+<h2>Edit Measurement For <%= @baby.name %></h2>
+
+<%= form_for [@baby, @measurement] do |f| %>
+  <%= render "forms", f: f %>
+  <div class="form-actions">
+    <%= f.submit "Update Measurement", class: "btn btn-primary" %>
+    <%= link_to "Cancel", baby_path(@baby), class: "btn btn-danger" %>
+  </div>
+<% end %>
