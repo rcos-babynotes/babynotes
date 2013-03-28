@@ -25,20 +25,4 @@
   <% end %>
 </table>
 
-
-<div class="row">
-  <div class="span8">
-    <h3>Timeline</h3>
-  </div>
-  <div class="span4">
-   <%= link_to "New Event", new_baby_event_path(@baby), class: "btn pull-right" %>
-  </div>
-</div>
-<% if @baby.events.any? %>
-  <ol class="events">
-    <%= render @baby.events %>
-  </ol>
-  <% else %>
-    <div class="span8"><%= @baby.name %> has no timeline events recorded!</div>
-<% end %>
-
+<%= render 'events/timeline' %>

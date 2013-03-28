@@ -1,9 +1,11 @@
 class EventsController < ApplicationController
+  require 'will_paginate/array'
 	before_filter :authenticate_user!
   before_filter :user_owns_baby
   before_filter :baby_owns_event, only: [:show, :edit, :update, :destroy]
 
   def index
+    @events = @baby.events.all.paginate(:page => params[:page], :per_page => 3)
   end
 
   def new
