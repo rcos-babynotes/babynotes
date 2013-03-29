@@ -15,8 +15,7 @@ gem 'devise'
 
 # Pagination/Infinite scrolling
 gem 'infinitescrolling-rails', '~> 0.3.0'
-gem 'will_paginate', '3.0.3'
-gem 'bootstrap-will_paginate', '0.0.6'
+gem 'will_paginate'
 
 # Styling
 gem 'bootstrap-sass'

@@ -1,4 +1,4 @@
-<%= form_for [@baby, @event] do |f| %>
+
 	<%= render 'shared/error_messages', object: f.object %>
 	<div class="control-group">
 		<% event_types = getEventTypes() %>
@@ -11,8 +11,3 @@
 	  <%= f.label :happened_at %>
 	  <%= f.datetime_select :happened_at, placeholder: "When it happened" %>
 	</div>
-<div class="form-actions">
-    <%= f.submit "Create Event", class: "btn btn-primary" %>
-    <%= link_to "Cancel", baby_path(@baby), class: "btn btn-danger" %>
-  </div>
-<% end %>

@@ -33,7 +33,6 @@ class Event < ActiveRecord::Base
 
   # Scopes
   # ========================================================
-  default_scope order: 'events.happened_at DESC'
 
   # Static functions
   # ========================================================

@@ -1,3 +1,9 @@
 <% provide(:title, "New Event") %>
 <h2>New Event For <%= @baby.name %></h2>
-<%= render "forms" %>
+<%= form_for [@baby, @event] do |f| %>
+	<%= render "forms", f: f %>
+	<div class="form-actions">
+    <%= f.submit "Create Event", class: "btn btn-primary" %>
+    <%= link_to "Cancel", baby_path(@baby), class: "btn btn-danger" %>
+  </div>
+<% end %>

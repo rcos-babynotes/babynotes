@@ -1,16 +1,21 @@
-<div class="row">
-  <div class="span8">
-    <h3>Timeline</h3>
-  </div>
-  <div class="span4">
-   <%= link_to "New Event", new_baby_event_path(@baby), class: "btn pull-right" %>
+<% javascript_include_tag :defaults, 'infinite_scroll' %>
+<div id="timeline">
+  <div class="row">
+    <div class="span8">
+      <h3>Timeline</h3>
+    </div>
+    <div class="span4">
+     <%= link_to "New Event", new_baby_event_path(@baby), class: "btn pull-right" %>
+    </div>
+    <div class="span8">
+      <% if @baby.events.any? %>
+        <div id="events">
+          <%= render @events %>
+        </div>
+        <%= will_paginate @events %>
+        <% else %>
+        <div class="span8"><%= @baby.name %> has no timeline events recorded!</div>
+      <% end %>
+    </div>
   </div>
 </div>
-<% if @baby.events.any? %>
-  <ol class="events">
-    <%= render @events %>
-  </ol>
-  <%= will_paginate @events %>
-  <% else %>
-    <div class="span8"><%= @baby.name %> has no timeline events recorded!</div>
-<% end %>
