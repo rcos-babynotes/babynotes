@@ -1,6 +1,7 @@
 module EventsHelper
 	def getEventTypes
-		['First Time Sitting',
+		['No type',
+			'First Time Sitting',
 			'First Time Crawling',
 			'First Time Standing',
 			'First Time Walking',

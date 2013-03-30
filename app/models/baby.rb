@@ -8,13 +8,14 @@
 #  user_id    :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  gender     :string(255)
 #
 
 class Baby < ActiveRecord::Base
 
   # Accessible attributes
   # ========================================================
-  attr_accessible :birth, :birth_date, :birth_time, :name
+  attr_accessible :birth, :birth_date, :birth_time, :name, :gender
   attr_accessor :birth_date, :birth_time
 
   # Validations
@@ -22,6 +23,7 @@ class Baby < ActiveRecord::Base
   validates :birth, presence: true
   validates :name, presence: true
   validates :user_id, presence: true
+  validates :gender, presence: true
 
   # Callbacks
   # ========================================================
