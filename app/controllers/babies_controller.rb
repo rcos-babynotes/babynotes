@@ -8,7 +8,12 @@ class BabiesController < ApplicationController
 
   def show
     @baby = Baby.find(params[:id])
-    @events = @baby.events.paginate(page: params[:page], :per_page => 3)
+    @events = @baby.events.order("happened_at DESC").page(params[:page]).per_page(3)
+    respond_to do |format|
+      format.html
+      format.js {render "shared/infinite_scroll"}
+    end
+
   end
 
   def new

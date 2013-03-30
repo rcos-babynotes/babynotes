@@ -14,7 +14,6 @@ end
 gem 'devise'
 
 # Pagination/Infinite scrolling
-gem 'infinitescrolling-rails', '~> 0.3.0'
 gem 'will_paginate'
 
 # Styling

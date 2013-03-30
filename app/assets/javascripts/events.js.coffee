@@ -2,9 +2,10 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 jQuery ->
+	if ('.pagination').length
 		$(window).scroll ->
 			url = $('.pagination .next_page').attr('href')
-			if url && $(window).scrollTop() > $(document).height() - $(window).height() - 50
+			if url && $(window).scrollTop() > $(document).height() - $(window).height() - 100
 				$('.pagination').text("Loading...")
 				$.getScript(url)
-	$(window).scroll()
+		$(window).scroll()

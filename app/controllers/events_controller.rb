@@ -6,6 +6,11 @@ class EventsController < ApplicationController
 
   def index
     @events = @baby.events.order("happened_at DESC").page(params[:page]).per_page(3)
+    respond_to do |format|
+      format.html
+      format.js {render "shared/infinite_scroll"}
+    end
+
   end
 
   def new
