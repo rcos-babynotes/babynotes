@@ -5,7 +5,7 @@ class EventsController < ApplicationController
   before_filter :baby_owns_event, only: [:show, :edit, :update, :destroy]
 
   def index
-    @events = @baby.events.order("happened_at DESC").page(params[:page]).per_page(3)
+    @events = @baby.events.order("happened_at DESC").page(params[:page]).per_page(6)
     respond_to do |format|
       format.html
       format.js {render "shared/infinite_scroll"}
