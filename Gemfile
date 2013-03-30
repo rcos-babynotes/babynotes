@@ -13,6 +13,9 @@ end
 # User authentication
 gem 'devise'
 
+# Pagination/Infinite scrolling
+gem 'will_paginate'
+
 # Styling
 gem 'bootstrap-sass'
 gem 'bootstrap-datepicker-rails'
@@ -38,6 +41,13 @@ end
 # Development
 group :development do
   gem 'annotate'
+  gem 'faker'
+end
+
+group :test do
+	gem 'rspec-rails'
+	gem 'shoulda-matchers'
+	gem 'factory_girl_rails'
 end
 
 gem 'jquery-rails'
