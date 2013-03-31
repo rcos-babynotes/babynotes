@@ -8,6 +8,7 @@ FactoryGirl.define do
   factory :baby do
     association :user
     birth 7.days.ago
+    gender "Unknown"
     sequence(:name) { |n| "Baby #{n}"}
   end
 
@@ -19,7 +20,9 @@ FactoryGirl.define do
 
   factory :event do
     association :baby
-    type "Defecation"
+    event_type "Defecation"
+    title "foobarbaz"
+    description "foobarbaz"
     happened_at Time.now
   end
 end

@@ -19,6 +19,7 @@ describe Baby do
     it { should validate_presence_of(:name) }
     it { should validate_presence_of(:birth) }
     it { should validate_presence_of(:user_id) }
+    it { should validate_presence_of(:gender) }
     it { should allow_value("03/05/1994").for(:birth) }
     it { should_not allow_value("not_a_date").for(:birth) }
   end
