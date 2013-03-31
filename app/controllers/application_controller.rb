@@ -18,4 +18,14 @@ class ApplicationController < ActionController::Base
       redirect_to root_path
     end
   end
+
+  def baby_owns_event
+    @event = @baby.events.find_by_id(params[:event_id] || params[:id])
+
+    unless @event.present?
+      flash[:error] = "That's not your baby's event!"
+      
+    end
+  end
+
 end

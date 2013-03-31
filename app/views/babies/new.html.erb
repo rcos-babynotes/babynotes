@@ -13,6 +13,8 @@
         <div class="control-group">
           <%= f.label :name %>
           <%= f.text_field :name, placeholder: "What is your baby's name?" %>
+          <%= f.label :gender %>
+          <%= f.select(:gender, ['Male','Female']) %>
           <%= f.label :birth, "Birth Date" %>
           <%= f.datetime_select :birth %>
         </div>
