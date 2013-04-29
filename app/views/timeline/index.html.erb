@@ -1,4 +1,4 @@
-<% @events.each_with_index do |day, index| %>
+<% @days.each_with_index do |day, index| %>
   <div class="row day">
     <div class="col_6 nogutter notes">
       <% if index == 0 %>
@@ -10,14 +10,25 @@
         <div class="col_9" style="height: 300px;">
       <% end %>
       <% day[1].each do |event| %>
-        <div class="col_5 note media milestone" style="<% if event.image.present? %>background-image: url('<%= event.image.url %>');<% end %>width: <%= 100.0 / day[1].count %>%;">
-          <div class="textcenter mediaData">
-            <span class="milestoneDate"><%= event.happened_at.to_s(:milestone) %></span>
-            <h1 class="milestoneTitle huge white script">
-              <%= event.title %>
-            </h1>
+        <% if event.is_a? Event %>
+          <div class="col_5 note media milestone" style="<% if event.image.present? %>background-image: url('<%= event.image.url %>');<% end %>width: <%= 100.0 / day[1].count %>%;">
+            <div class="textcenter mediaData">
+              <span class="milestoneDate"><%= event.happened_at.to_s(:milestone) %></span>
+              <h1 class="milestoneTitle huge white script">
+                <%= event.title %>
+              </h1>
+            </div>
           </div>
-        </div>
+        <% else %>
+          <div class="col_5 note" style="width: <%= 100.0 / day[1].count %>%;">
+            <p class="supertitle">MEASUREMENT</p>
+            <h1 class="huge script" style="font-size: 400%; margin-bottom:0;">
+              <%= event.weight %> lbs.<br />
+              <%= event.height %> in.
+            </h1>
+            <p><%= event.happened_at.to_s(:milestone) %></p>
+          </div>
+        <% end %>
       <% end %>
       <% if index == 0 %>
         </div>
