@@ -1,5 +1,5 @@
 module MeasurementsHelper
-	def getData
+	def getHeightData(gender)
 	{0=>[44.9251,45.56841,46.55429,48.18937,49.98888,51.77126,53.36153,54.30721,54.919],
 0.5=>[47.97812,48.55809,49.4578,50.97919,52.69598,54.44054,56.03444,56.99908,57.62984],
 1.5=>[52.19859,52.72611,53.55365,54.9791,56.62843,58.35059,59.9664,60.96465,61.62591],
@@ -38,7 +38,41 @@ module MeasurementsHelper
 34.5=>[87.86696,88.70301,90.00937,92.24482,94.80823,97.45873,99.92162,101.4318,102.4274],
 35.5=>[88.49774,89.33242,90.63786,92.87525,95.44637,98.11108,100.5929,102.1174,103.1237]}
 	end
-	def findDataByAge(age)
-		age
+	def findDataByAge(age, gender)
+		data = getHeightData(gender)
+		data.keys.each do |key|
+			if key > age
+				data[key].each do |measurement|
+					return measurement
+				end
+				break
+			end
+		end
+	end
+	def findPercentile(data)
+	end
+	def getPercentileWithIndex(index)
+		case index
+			when 0
+				return 3
+			when 1
+				return 5
+			when 2
+				return 10
+			when 3
+				return 25
+			when 4
+				return 50
+			when 5
+				return 75
+			when 6
+				return 90
+			when 7
+				return 95
+			when 8
+				return 97
+			else
+				return 0
+			end
 	end
 end

@@ -9,10 +9,13 @@
     <%= measurement.weight %>
   </td>
   <td>
-  	<%= getData.keys %>
+  	<%#
+    getHeightData(@baby.gender).keys
+
+    %>
   	<%#= measurement.happened_at %>
   	<%#= @baby.birth %>
-  	<%= (measurement.happened_at.to_date - @baby.birth.to_date).to_i %>
-  	<%#=findDataByAge	 %>
+  	<%#=  %>
+  	<%=findDataByAge(((measurement.happened_at.to_date - @baby.birth.to_date).to_i)/31, @baby.gender)%>
   </td>
 </tr>

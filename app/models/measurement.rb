@@ -10,20 +10,12 @@
 #  updated_at        :datetime         not null
 #  height_percentile :integer
 #  weight_percentile :integer
-<<<<<<< HEAD
-=======
 #  happened_at       :datetime
->>>>>>> master
-#
 
 class Measurement < ActiveRecord::Base
   # Accessible attributes
   # ========================================================
-<<<<<<< HEAD
-  attr_accessible :height, :weight, :height_percentile, :weight_percentile
-=======
-  attr_accessible :height, :weight, :happened_at
->>>>>>> master
+  attr_accessible :height, :weight, :height_percentile, :weight_percentile, :happened_at
 
   # Validations
   # ========================================================
