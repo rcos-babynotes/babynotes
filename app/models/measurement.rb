@@ -2,19 +2,22 @@
 #
 # Table name: measurements
 #
-#  id         :integer          not null, primary key
-#  height     :float
-#  weight     :float
-#  baby_id    :integer
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id                :integer          not null, primary key
+#  height            :float
+#  weight            :float
+#  baby_id           :integer
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#  height_percentile :integer
+#  weight_percentile :integer
+#  happened_at       :datetime
 #
 
 class Measurement < ActiveRecord::Base
 
   # Accessible attributes
   # ========================================================
-  attr_accessible :height, :weight
+  attr_accessible :height, :weight, :happened_at
 
   # Validations
   # ========================================================
