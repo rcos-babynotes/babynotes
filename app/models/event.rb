@@ -3,14 +3,12 @@
 # Table name: events
 #
 #  id          :integer          not null, primary key
-#  description :text(255)
+#  description :string(255)
 #  type        :string(255)
 #  happened_at :datetime
 #  baby_id     :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
-#  event_type  :string(255)
-#  title       :string(255)
 #
 
 class Event < ActiveRecord::Base
