@@ -1,0 +1,10 @@
+<% provide(:title, "Edit Event") %>
+<h2>Edit Event <%= @event.description%> For <%= @baby.name %></h2>
+
+<%= form_for [@baby, @event] do |f| %>
+  <%= render "forms", f: f %>
+  <div class="form-actions">
+    <%= f.submit "Update Event", class: "btn btn-primary" %>
+    <%= link_to "Cancel", baby_path(@baby), class: "btn btn-danger" %>
+  </div>
+<% end %>

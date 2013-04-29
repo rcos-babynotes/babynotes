@@ -1,4 +1,5 @@
 class BabiesController < ApplicationController
+  #require 'will_paginate'
   before_filter :user_owns_baby, only: [:show, :edit, :update]
 
   def index
@@ -6,6 +7,13 @@ class BabiesController < ApplicationController
   end
 
   def show
+    @baby = Baby.find(params[:id])
+    @events = @baby.events.order("happened_at DESC").paginate(page: params[:page]).per_page(6)
+    respond_to do |format|
+      format.html
+      format.js { render "shared/infinite_scroll" }
+    end
+
   end
 
   def new

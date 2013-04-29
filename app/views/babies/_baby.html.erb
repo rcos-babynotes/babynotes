@@ -1,4 +1,11 @@
 <div class="baby span4">
   <h3><%= link_to baby.name, baby %></h3>
-  Born <%=l baby.birth %>
+  <p>Born <%=l baby.birth %></p>
+  <p>Gender
+  <%if baby.gender%>
+  	<%= baby.gender%>
+  <% else %>
+  	<%= "Unknown" %>
+  <% end %>
+	</p>
 </div>
