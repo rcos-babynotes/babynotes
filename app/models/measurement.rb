@@ -13,7 +13,6 @@
 #
 
 class Measurement < ActiveRecord::Base
-
   # Accessible attributes
   # ========================================================
   attr_accessible :height, :weight, :height_percentile, :weight_percentile
