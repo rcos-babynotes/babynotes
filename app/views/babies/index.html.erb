@@ -2,5 +2,11 @@
 <h2>Your Babies</h2>
 
 <div class="row">
-  <%= render @babies %>
+  <% if @babies.nil? %>
+    <div class="span12">
+      <p>You have no babies!</p>
+    </div>
+  <% else %>
+    <%= render @babies %>
+  <% end %>
 </div>
