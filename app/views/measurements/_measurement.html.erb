@@ -3,19 +3,13 @@
     <%= link_to l(measurement.happened_at), edit_baby_measurement_path(@baby, measurement) %>
   </td>
   <td>
-    <%= measurement.height %>
+    <%= measurement.height.to_s + "in /" %>
+    <%= (measurement.height / (0.39370)).to_s[0..4] + "cm" %>
+    <%= "Height is about the " + measurement.height_percentile.to_s + "%tile" %>
   </td>
   <td>
-    <%= measurement.weight %>
-  </td>
-  <td>
-  	<%#
-    getHeightData(@baby.gender).keys
-
-    %>
-  	<%#= measurement.happened_at %>
-  	<%#= @baby.birth %>
-  	<%#=  %>
-  	<%=findDataByAge(((measurement.happened_at.to_date - @baby.birth.to_date).to_i)/31, @baby.gender)%>
+    <%= measurement.weight.to_s + "in /" %>
+    <%= (measurement.weight / (0.39370)).to_s[0..4] + "cm" %>
+     <%= "Weight is about the " + measurement.weight_percentile.to_s + "%tile" %>
   </td>
 </tr>
