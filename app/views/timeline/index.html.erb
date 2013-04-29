@@ -1,7 +1,7 @@
 <% @days.each do |day, data| %>
   <div class="row">
-    New Day
     <div class="span12">
+      <h3><%= day.strftime("%B %d, %Y") %></h3>
       <%= render partial: 'events/event', collection: data['events'], as: :event %>
       <%= render partial: 'measurements/measurement', collection: data['measurements'], as: :measurement %>
     </div>
