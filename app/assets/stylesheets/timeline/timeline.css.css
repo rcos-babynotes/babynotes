@@ -696,6 +696,7 @@ body > div:first-child {
   margin-right: 0;
   padding: 3em;
   background-size: cover;
+  box-sizing: border-box;
 }
 .notes .note p {
   opacity: .8;

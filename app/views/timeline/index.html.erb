@@ -3,11 +3,14 @@
     <div class="col_6 nogutter notes">
       <% if index == 0 %>
         <div class="col_3 note addNote">
-          <h4 class="bold white">+ ADD A NOTE</h4>
+          <%= link_to "<h4 class=\"bold white\">+ ADD A NOTE</h4>".html_safe, new_baby_event_path(current_user.babies.first) %>
         </div>
       <% end %>
+      <% if index == 0 %>
+        <div class="col_9" style="height: 300px;">
+      <% end %>
       <% day[1].each do |event| %>
-        <div class="col_5 note media milestone" <% if event.image.present? %>style="background-image: url('<%= event.image.url %>');"<% end %>>
+        <div class="col_5 note media milestone" style="<% if event.image.present? %>background-image: url('<%= event.image.url %>');<% end %>width: <%= 100.0 / day[1].count %>%;">
           <div class="textcenter mediaData">
             <span class="milestoneDate"><%= event.happened_at.to_s(:milestone) %></span>
             <h1 class="milestoneTitle huge white script">
@@ -16,8 +19,11 @@
           </div>
         </div>
       <% end %>
+      <% if index == 0 %>
+        </div>
+      <% end %>
     </div>
-    <div class="col_6 last data" data-state="10">
+    <div class="col_6 last data" data-state="<%= rand(9) + 1 %>">
       <div class="col_1">&nbsp;</div>
       <div class="col_4">
         <h2>Keep it up!</h2>
