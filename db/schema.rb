@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130330201654) do
+ActiveRecord::Schema.define(:version => 20130429205859) do
 
   create_table "babies", :force => true do |t|
     t.datetime "birth"
@@ -23,22 +23,27 @@ ActiveRecord::Schema.define(:version => 20130330201654) do
   end
 
   create_table "events", :force => true do |t|
-    t.text     "description", :limit => 255
+    t.text     "description",        :limit => 255
     t.string   "type"
     t.datetime "happened_at"
     t.integer  "baby_id"
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
     t.string   "event_type"
     t.string   "title"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "measurements", :force => true do |t|
     t.float    "height"
     t.float    "weight"
     t.integer  "baby_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.datetime "happened_at"
   end
 
   create_table "users", :force => true do |t|

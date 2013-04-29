@@ -1,5 +1,5 @@
 class BabiesController < ApplicationController
-  #require 'will_paginate'
+  before_filter :authenticate_user!
   before_filter :user_owns_baby, only: [:show, :edit, :update]
 
   def index
