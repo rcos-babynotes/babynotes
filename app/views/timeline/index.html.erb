@@ -2,7 +2,9 @@
   <div class="row">
     <div class="span12">
       <h3><%= day.strftime("%B %d, %Y") %></h3>
+      <h4>Events</h4>
       <%= render partial: 'events/event', collection: data['events'], as: :event %>
+      <h4>Measurements</h4>
       <%= render partial: 'measurements/measurement', collection: data['measurements'], as: :measurement %>
     </div>
   </div>
