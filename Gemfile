@@ -21,6 +21,9 @@ gem 'bootstrap-sass'
 gem 'bootstrap-datepicker-rails'
 gem 'bootstrap-timepicker-rails', :require => 'bootstrap-timepicker-rails', :git => 'git://github.com/tispratik/bootstrap-timepicker-rails.git'
 
+# Attachments
+gem 'paperclip'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
