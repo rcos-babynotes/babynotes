@@ -9,10 +9,10 @@
     <%= measurement.weight %>
   </td>
   <td>
-  	<%#= getData %>
-  	<%= Date.today %>
-  	<%= @baby.birth.to_date %>
-  	<%= current_age = (Time.now - @baby.birth).to_date %>
+  	<%= getData.keys %>
+  	<%#= measurement.happened_at %>
+  	<%#= @baby.birth %>
+  	<%= (measurement.happened_at.to_date - @baby.birth.to_date).to_i %>
   	<%#=findDataByAge	 %>
   </td>
 </tr>
