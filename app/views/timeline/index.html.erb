@@ -1,18 +1,22 @@
 <% @events.each do |day, events| %>
-  <% events.each do |event| %>
-    <div class="event">
-      <h4><%= link_to event.title, edit_baby_event_path(@baby, event)  %></h4>
-      <span class="content">
-        <p><%= event.description %></p>
-      </span>
+  <div class="row">
+    <div class="span12">
+      <% events.each do |event| %>
+        <div class="event">
+          <h4><%= link_to event.title, edit_baby_event_path(@baby, event)  %></h4>
+          <span class="content">
+            <p><%= event.description %></p>
+          </span>
 
-      <span class="timestamp">
-        <p>Happened at <%= event.happened_at %>, <%= time_ago_in_words(event.happened_at) %> ago.</p>
-      </span>
-      This event is of type: <%= event.event_type %>
-      <%= link_to "Delete", baby_event_path(@baby, event), :confirm => 'Are you sure?', method: :delete %>
-      
-      
+          <span class="timestamp">
+            <p>Happened at <%= event.happened_at %>, <%= time_ago_in_words(event.happened_at) %> ago.</p>
+          </span>
+          This event is of type: <%= event.event_type %>
+          <%= link_to "Delete", baby_event_path(@baby, event), :confirm => 'Are you sure?', method: :delete %>
+          
+          
+        </div>
+      <% end %>
     </div>
-  <% end %>
+  </div>
 <% end %>
