@@ -14,7 +14,7 @@ Babynotes::Application.routes.draw do
     resources :events
   end
 
-  match '/timeline', to: "timeline#index"
+  resources :timeline, only: [:index]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
