@@ -11,5 +11,5 @@
  *= require_self
  *= require bootstrap-datepicker
  *= require bootstrap-timepicker
- *= require_tree ./application/
+ *= require_tree ./timeline/
  */

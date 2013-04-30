@@ -1,5 +1,6 @@
 class TimelineController < ApplicationController
   before_filter :authenticate_user!
+  layout "timeline"
 
   def index
     @baby = current_user.babies.first
