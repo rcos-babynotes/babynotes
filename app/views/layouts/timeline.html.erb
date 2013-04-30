@@ -14,28 +14,38 @@
     <%= render 'shared/shim' %>
   </head>
   <body>
+    <%= render 'shared/timelineHeader' %>
     <%= yield %>
 
     <script type="text/javascript">
       $(document).ready(function(){
-        $(".data").click(function(){
-          viewData();
-        })
-        $(".notes").click(function(){
-          viewFeed();
-        })
+        $(".switchContainer").click(function(){
+          if($(".switch").css("margin-left") === "0px"){
+            viewData();
+          }else{
+            viewFeed();
+          }
+        });
       });
       
       function viewData(){
         $(".row .col_6").parent().animate({
           marginLeft: 100-$(this).width()
-        }, 500);
+        }, 150);
+        $(".switch").animate({
+          marginLeft: (($(".switch")).outerWidth())
+        }, 100);
+
       }
 
       function viewFeed(){
         $(".row .col_6").parent().animate({
           marginLeft: 0
-        }, 500);
+        }, 150);
+        $(".switch").animate({
+          marginLeft: 0
+        }, 100);
+
       }
     </script>
   </body>
