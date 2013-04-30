@@ -1,0 +1,61 @@
+<% @days.each_with_index do |day, index| %>
+  <div class="row day">
+    <div class="col_6 nogutter notes">
+      <% if index == 0 %>
+        <div class="col_3 note addNote">
+          <%= link_to "<h4 class=\"bold white\">+ ADD A NOTE</h4>".html_safe, new_baby_event_path(current_user.babies.first) %>
+        </div>
+      <% end %>
+      <% if index == 0 %>
+        <div class="col_9" style="height: 300px;">
+      <% end %>
+      <% if !day[1]['events'].nil? && !day[1]['measurements'].nil? %>
+        <% total_count = day[1]['events'].count + day[1]['measurements'].count %>
+      <% elsif day[1]['events'].nil? && !day[1]['measurements'].nil? %>
+        <% total_count = day[1]['measurements'].count %>
+      <% elsif !day[1]['events'].nil? && day[1]['measurements'].nil? %>
+        <% total_count = day[1]['events'].count %>
+      <% else %>
+        <% total_count = 0 %>
+      <% end %>
+      <% unless day[1]['events'].nil? %>
+        <% day[1]['events'].each do |event| %>
+          <div class="col_5 note media milestone" style="<% if event.image.present? %>background-image: url('<%= event.image.url %>');<% end %>width: <%= 100.0 / total_count %>%;">
+            <div class="textcenter mediaData">
+              <span class="milestoneDate"><%= event.happened_at.to_s(:milestone) %></span>
+              <h1 class="milestoneTitle huge white script">
+                <%= event.title %>
+              </h1>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+      <% unless day[1]['measurements'].nil? %>
+        <% day[1]['measurements'].each do |measurement| %>
+          <div class="col_5 note" style="width: <%= 100.0 / total_count %>%;">
+            <p class="supertitle">MEASUREMENT</p>
+            <h1 class="huge script" style="font-size: 400%; margin-bottom:0; padding-top: 15px;">
+              <%= measurement.weight %> lbs.<br />
+              <%= measurement.height %> in.
+            </h1>
+            <p><%= measurement.happened_at.to_s(:milestone) %></p>
+          </div>
+        <% end %>
+      <% end %>
+      <% if index == 0 %>
+        </div>
+      <% end %>
+    </div>
+    <div class="col_6 last data" data-state="<%= rand(9) + 1 %>">
+      <div class="col_1">&nbsp;</div>
+      <div class="col_4">
+        <h2>Keep it up!</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo error sed quas facilis impedit. Inventore, eum, quo esse eaque reiciendis iure iusto asperiores delectus reprehenderit harum culpa est nesciunt. Magni? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, quam, eius dolores error fuga rem mollitia quis consequuntur ipsum labore illum temporibus at laborum perferendis ratione facere cum asperiores quae!</p>
+      </div>
+      <div class="col_4">
+        <h2>&nbsp;</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, debitis nobis voluptates eius sunt quod? Rerum, quibusdam, id recusandae est saepe velit eos vel fuga nobis tempore beatae sint ipsum.</p>
+      </div>
+    </div>
+  </div>
+<% end %>
