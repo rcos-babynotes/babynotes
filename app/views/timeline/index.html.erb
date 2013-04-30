@@ -9,26 +9,38 @@
       <% if index == 0 %>
         <div class="col_9" style="height: 300px;">
       <% end %>
-      <% total_count = day['events'].count + day['measurements'].count %>
-      <% day['events'].each do |event| %>
-        <div class="col_5 note media milestone" style="<% if event.image.present? %>background-image: url('<%= event.image.url %>');<% end %>width: <%= 100.0 / total_count %>%;">
-          <div class="textcenter mediaData">
-            <span class="milestoneDate"><%= event.happened_at.to_s(:milestone) %></span>
-            <h1 class="milestoneTitle huge white script">
-              <%= event.title %>
-            </h1>
-          </div>
-        </div>
+      <% if !day[1]['events'].nil? && !day[1]['measurements'].nil? %>
+        <% total_count = day[1]['events'].count + day[1]['measurements'].count %>
+      <% elsif day[1]['events'].nil? && !day[1]['measurements'].nil? %>
+        <% total_count = day[1]['measurements'].count %>
+      <% elsif !day[1]['events'].nil? && day[1]['measurements'].nil? %>
+        <% total_count = day[1]['events'].count %>
+      <% else %>
+        <% total_count = 0 %>
       <% end %>
-      <% day['measurements'].each do |measurement| %>
-        <div class="col_5 note" style="width: <%= 100.0 / total_count %>%;">
-          <p class="supertitle">MEASUREMENT</p>
-          <h1 class="huge script" style="font-size: 400%; margin-bottom:0; padding-top: 15px;">
-            <%= measurement.weight %> lbs.<br />
-            <%= measurement.height %> in.
-          </h1>
-          <p><%= measurement.happened_at.to_s(:milestone) %></p>
-        </div>
+      <% unless day[1]['events'].nil? %>
+        <% day[1]['events'].each do |event| %>
+          <div class="col_5 note media milestone" style="<% if event.image.present? %>background-image: url('<%= event.image.url %>');<% end %>width: <%= 100.0 / total_count %>%;">
+            <div class="textcenter mediaData">
+              <span class="milestoneDate"><%= event.happened_at.to_s(:milestone) %></span>
+              <h1 class="milestoneTitle huge white script">
+                <%= event.title %>
+              </h1>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+      <% unless day[1]['measurements'].nil? %>
+        <% day[1]['measurements'].each do |measurement| %>
+          <div class="col_5 note" style="width: <%= 100.0 / total_count %>%;">
+            <p class="supertitle">MEASUREMENT</p>
+            <h1 class="huge script" style="font-size: 400%; margin-bottom:0; padding-top: 15px;">
+              <%= measurement.weight %> lbs.<br />
+              <%= measurement.height %> in.
+            </h1>
+            <p><%= measurement.happened_at.to_s(:milestone) %></p>
+          </div>
+        <% end %>
       <% end %>
       <% if index == 0 %>
         </div>
