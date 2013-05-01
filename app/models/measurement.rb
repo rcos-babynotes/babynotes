@@ -8,9 +8,10 @@
 #  baby_id           :integer
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
+#  happened_at       :datetime
 #  height_percentile :integer
 #  weight_percentile :integer
-#  happened_at       :datetime
+#
 
 class Measurement < ActiveRecord::Base
   include ActionView::Helpers

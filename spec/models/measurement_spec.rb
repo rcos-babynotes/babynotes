@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: measurements
+#
+#  id                :integer          not null, primary key
+#  height            :float
+#  weight            :float
+#  baby_id           :integer
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#  happened_at       :datetime
+#  height_percentile :integer
+#  weight_percentile :integer
+#
+
 require 'spec_helper'
 
 describe Measurement do

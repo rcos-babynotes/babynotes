@@ -1,3 +1,22 @@
+# == Schema Information
+#
+# Table name: events
+#
+#  id                 :integer          not null, primary key
+#  description        :text(255)
+#  type               :string(255)
+#  happened_at        :datetime
+#  baby_id            :integer
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#  event_type         :string(255)
+#  title              :string(255)
+#  image_file_name    :string(255)
+#  image_content_type :string(255)
+#  image_file_size    :integer
+#  image_updated_at   :datetime
+#
+
 require 'spec_helper'
 
 describe Event do

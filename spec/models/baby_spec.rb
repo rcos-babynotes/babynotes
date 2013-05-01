@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: babies
+#
+#  id         :integer          not null, primary key
+#  birth      :datetime
+#  name       :string(255)
+#  user_id    :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  gender     :string(255)
+#
+
 require 'spec_helper'
 
 describe Baby do
