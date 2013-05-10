@@ -3,9 +3,13 @@
     <%= link_to l(measurement.happened_at), edit_baby_measurement_path(@baby, measurement) %>
   </td>
   <td>
-    <%= measurement.height %>
+    <%= measurement.height.to_s + "in /" %>
+    <%= (measurement.height / (0.39370)).to_s[0..4] + "cm" %>
+    <%= "Height is about the " + measurement.height_percentile.to_s + "%tile" %>
   </td>
   <td>
-    <%= measurement.weight %>
+    <%= measurement.weight.to_s + "in /" %>
+    <%= (measurement.weight / (0.39370)).to_s[0..4] + "cm" %>
+     <%= "Weight is about the " + measurement.weight_percentile.to_s + "%tile" %>
   </td>
 </tr>

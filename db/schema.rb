@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130429205859) do
+ActiveRecord::Schema.define(:version => 20130501011943) do
 
   create_table "babies", :force => true do |t|
     t.datetime "birth"
@@ -41,9 +41,11 @@ ActiveRecord::Schema.define(:version => 20130429205859) do
     t.float    "height"
     t.float    "weight"
     t.integer  "baby_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
     t.datetime "happened_at"
+    t.integer  "height_percentile"
+    t.integer  "weight_percentile"
   end
 
   create_table "users", :force => true do |t|

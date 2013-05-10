@@ -50,7 +50,12 @@
       <div class="col_1">&nbsp;</div>
       <div class="col_4">
         <h2>Keep it up!</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo error sed quas facilis impedit. Inventore, eum, quo esse eaque reiciendis iure iusto asperiores delectus reprehenderit harum culpa est nesciunt. Magni? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, quam, eius dolores error fuga rem mollitia quis consequuntur ipsum labore illum temporibus at laborum perferendis ratione facere cum asperiores quae!</p>
+        <p></p>
+        <% unless day[1]['measurements'].nil? %>
+          <% day[1]['measurements'].each do |measurement| %>
+              <p>Percentile height: <%= measurement.height_percentile %> and Percentile weight: <%= measurement.weight_percentile %></p>
+          <% end %>
+        <% end %>
       </div>
       <div class="col_4">
         <h2>&nbsp;</h2>

@@ -13,7 +13,7 @@ class TimelineController < ApplicationController
     elsif @events.empty? && !@measurements.empty?
       @days = @measurements#.each { |key, value| @measurements[key] = { 'measurements' => value } }
     else
-      @days = @events.merge(@measurements) { |key, events, measurements| events + measurements }
+      @days = @events.merge(@measurements){ |key, events, measurements| events + measurements }
       # @days = @events.merge(@measurements) { |key, events, measurements| { 'events' => events, 'measurements' => measurements } }
     end
   end
